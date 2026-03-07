@@ -292,3 +292,31 @@ max-width: 550px;
 margin-bottom: 12px;
 line-height: 1.5;
 }
+.archive-section{
+margin-top: 25px;
+}
+
+.archive-section h3{
+color: #6c5ce7;
+margin-bottom: 12px;
+}
+
+.archive-card{
+background: white;
+padding: 14px 16px;
+border-radius: 14px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+max-width: 550px;
+margin-bottom: 12px;
+}
+
+.archive-card h4{
+margin-top: 0;
+margin-bottom: 8px;
+color: #6c5ce7;
+}
+
+.archive-card p{
+margin: 0;
+line-height: 1.5;
+}
