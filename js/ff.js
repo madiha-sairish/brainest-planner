@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainest Planner - Fan Fiction</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <h1>Brainest Planner</h1>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="todo.html">ToDo</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="mood.html">Mood</a></li>
+      <li><a href="ff.html">Fan Fiction</a></li>
+      <li><a href="quotes.html">Quotes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="extra.html">Extra</a></li>
+      <li><a href="archive.html">Archive</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Fan Fiction</h2>
+    <p>Write your delulu, love, hate, or imaginary stories here 🌸</p>
+
+    <input type="text" id="ffTitle" placeholder="Enter story title">
+    <br><br>
+
+    <input type="text" id="ffCharacter" placeholder="Enter character or fandom name">
+    <br><br>
+
+    <input type="text" id="ffGenre" placeholder="Enter genre (love, hate, delulu, drama...)">
+    <br><br>
+
+    <textarea id="ffStory" placeholder="Write your story here..."></textarea>
+    <br><br>
+
+    <button onclick="saveFFStory()">Save Story</button>
+
+    <div id="ffList"></div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/ff.js"></script>
+
+</body>
+</html>
