@@ -261,3 +261,34 @@ background: #6c5ce7;
 border-radius: 10px;
 transition: width 0.3s ease;
 }
+#extraInput{
+width: 100%;
+max-width: 500px;
+height: 120px;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 12px;
+font-size: 16px;
+resize: none;
+font-family: Arial, sans-serif;
+}
+
+#extraList{
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.extra-card{
+background: white;
+padding: 16px;
+border-radius: 14px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+max-width: 550px;
+}
+
+.extra-card p{
+margin-bottom: 12px;
+line-height: 1.5;
+}
