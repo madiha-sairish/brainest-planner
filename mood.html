@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Brainest Planner-Mood Tracker</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainest Planner - Mood Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<script src="js/mood.js"></script>
+
 <body>
 
-<nav class="navbar">
-<h1>Brainest Planner</h1>
+  <nav class="navbar">
+    <h1>Brainest Planner</h1>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="todo.html">ToDo</a></li>
-<li><a href="diary.html">Diary</a></li>
-<li><a href="mood.html">Mood</a></li>
-<li><a href="ff.html">Fan Friction</a></li>
-<li><a href="quotes.html">Quotes</a></li>
-<li><a href="progress.html">Progress</a></li>
-<li><a href="extra.html">Extra</a></li>
-<li><a href="archive.html">Archive</a></li>
-</ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="todo.html">ToDo</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="mood.html">Mood</a></li>
+      <li><a href="ff.html">Fan Friction</a></li>
+      <li><a href="quotes.html">Quotes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="extra.html">Extra</a></li>
+      <li><a href="archive.html">Archive</a></li>
+    </ul>
+  </nav>
 
-</nav>
+  <div class="container">
+    <h2>Mood Tracker</h2>
+    <p>Track how you feel each day 🌸</p>
 
-<div class="container">
+    <div class="mood-buttons">
+      <button onclick="saveMood('😊 Happy')">😊 Happy</button>
+      <button onclick="saveMood('😌 Calm')">😌 Calm</button>
+      <button onclick="saveMood('😴 Tired')">😴 Tired</button>
+      <button onclick="saveMood('😔 Sad')">😔 Sad</button>
+      <button onclick="saveMood('😡 Angry')">😡 Angry</button>
+    </div>
 
-<h2>Mood Tracker</h2>
+    <div id="moodList"></div>
+  </div>
 
-<p>Track how you feel Each Day 🌸</p>
-
-</div>
-
-<script src="js/common.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/mood.js"></script>
 
 </body>
 </html>
