@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Brainest Planner-Home</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainest Planner - Home</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-<h1>Welcome To Brainest Planner</h1>
+  <nav class="navbar">
+    <h1>Brainest Planner</h1>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="todo.html">ToDo</a></li>
-<li><a href="diary.html">Diary</a></li>
-<li><a href="mood.html">Mood</a></li>
-<li><a href="ff.html">Fan Friction</a></li>
-<li><a href="quotes.html">Quotes</a></li>
-<li><a href="progress.html">Progress</a></li>
-<li><a href="extra.html">Extra</a></li>
-<li><a href="archive.html">Archive</a></li>
-</ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="todo.html">ToDo</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="mood.html">Mood</a></li>
+      <li><a href="ff.html">Fan Friction</a></li>
+      <li><a href="quotes.html">Quotes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="extra.html">Extra</a></li>
+      <li><a href="archive.html">Archive</a></li>
+    </ul>
+  </nav>
 
-</nav>
+  <div class="container">
+    <h2>Welcome to Brainest Planner</h2>
+    <p>Your personal aesthetic productivity planner 🌸</p>
 
-<div class="container">
+    <div class="dashboard-grid">
 
-<h2>Welcome to Brainest Planner</h2>
+      <div class="dashboard-card">
+        <h3>Total Tasks</h3>
+        <p id="homeTotalTasks">0</p>
+      </div>
 
-<p>Your Personal Asthetic Productivity Planner 🌸</p>
+      <div class="dashboard-card">
+        <h3>Completed Tasks</h3>
+        <p id="homeCompletedTasks">0</p>
+      </div>
 
-</div>
+      <div class="dashboard-card">
+        <h3>Latest Mood</h3>
+        <p id="homeLatestMood">No mood saved yet.</p>
+      </div>
 
-<script src="js/common.js"></script>
+      <div class="dashboard-card">
+        <h3>Latest Diary Entry</h3>
+        <p id="homeLatestDiary">No diary entry yet.</p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Saved Quotes</h3>
+        <p id="homeQuotesCount">0</p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Extra Notes</h3>
+        <p id="homeExtraCount">0</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
 
 </body>
 </html>
