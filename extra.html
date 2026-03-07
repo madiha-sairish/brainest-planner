@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Brainest Planner-Extra</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainest Planner - Extra</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<script src="js/extra.js"></script>
+
 <body>
 
-<nav class="navbar">
-<h1>Brainest Planner</h1>
+  <nav class="navbar">
+    <h1>Brainest Planner</h1>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="todo.html">ToDo</a></li>
-<li><a href="diary.html">Diary</a></li>
-<li><a href="mood.html">Mood</a></li>
-<li><a href="ff.html">Fan Friction</a></li>
-<li><a href="quotes.html">Quotes</a></li>
-<li><a href="progress.html">Progress</a></li>
-<li><a href="extra.html">Extra</a></li>
-<li><a href="archive.html">Archive</a></li>
-</ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="todo.html">ToDo</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="mood.html">Mood</a></li>
+      <li><a href="ff.html">Fan Friction</a></li>
+      <li><a href="quotes.html">Quotes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="extra.html">Extra</a></li>
+      <li><a href="archive.html">Archive</a></li>
+    </ul>
+  </nav>
 
-</nav>
+  <div class="container">
+    <h2>Extra Notes</h2>
+    <p>Save extra notes and ideas 🌸</p>
 
-<div class="container">
+    <textarea id="extraInput" placeholder="Write your note here..."></textarea>
+    <br><br>
 
-<h2>Extra Notes</h2>
+    <button onclick="saveExtraNote()">Save Note</button>
 
-<p>Save extra Notes and Ideas 🌸</p>
+    <div id="extraList"></div>
+  </div>
 
-</div>
-
-<script src="js/common.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/extra.js"></script>
 
 </body>
 </html>
