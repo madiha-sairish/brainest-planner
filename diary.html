@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Brainest Planner-Diary</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainest Planner - Diary</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<script src="js/diary.js"></script>
+
 <body>
 
-<nav class="navbar">
-<h1>Brainest Planner</h1>
+  <nav class="navbar">
+    <h1>Brainest Planner</h1>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="todo.html">ToDo</a></li>
-<li><a href="diary.html">Diary</a></li>
-<li><a href="mood.html">Mood</a></li>
-<li><a href="ff.html">Fan Friction</a></li>
-<li><a href="quotes.html">Quotes</a></li>
-<li><a href="progress.html">Progress</a></li>
-<li><a href="extra.html">Extra</a></li>
-<li><a href="archive.html">Archive</a></li>
-</ul>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="todo.html">ToDo</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="mood.html">Mood</a></li>
+      <li><a href="ff.html">Fan Friction</a></li>
+      <li><a href="quotes.html">Quotes</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="extra.html">Extra</a></li>
+      <li><a href="archive.html">Archive</a></li>
+    </ul>
+  </nav>
 
-</nav>
+  <div class="container">
+    <h2>My Diary</h2>
+    <p>Write your daily thoughts and memories here 🌸</p>
 
-<div class="container">
+    <input type="date" id="diaryDate">
+    <br><br>
 
-<h2>My Diary</h2>
+    <textarea id="diaryInput" placeholder="Write your diary entry here..."></textarea>
+    <br><br>
 
-<p>Write your Thoughts and Experiences 🌸</p>
+    <button onclick="saveDiary()">Save Entry</button>
 
-</div>
+    <div id="diaryList"></div>
+  </div>
 
-<script src="js/common.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/diary.js"></script>
 
 </body>
 </html>
