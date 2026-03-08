@@ -1,12 +1,12 @@
 function saveFFStory() {
-  let title = document.getElementById("ffTitle").value;
-  let character = document.getElementById("ffCharacter").value;
-  let genre = document.getElementById("ffGenre").value;
-  let story = document.getElementById("ffStory").value;
+  let title = document.getElementById("ffTitle").value.trim();
+  let character = document.getElementById("ffCharacter").value.trim();
+  let genre = document.getElementById("ffGenre").value.trim();
+  let story = document.getElementById("ffStory").value.trim();
 
   if (title === "" || character === "" || genre === "" || story === "") return;
 
-  let stories = JSON.parse(localStorage.getItem("ffStories")) || [];
+  let stories = loadUserData("ffStories");
 
   stories.unshift({
     title: title,
@@ -15,7 +15,7 @@ function saveFFStory() {
     story: story
   });
 
-  localStorage.setItem("ffStories", JSON.stringify(stories));
+  saveUserData("ffStories", stories);
 
   document.getElementById("ffTitle").value = "";
   document.getElementById("ffCharacter").value = "";
@@ -29,7 +29,7 @@ function displayFFStories() {
   let ffList = document.getElementById("ffList");
   ffList.innerHTML = "";
 
-  let stories = JSON.parse(localStorage.getItem("ffStories")) || [];
+  let stories = loadUserData("ffStories");
 
   stories.forEach(function(entry, index) {
     let card = document.createElement("div");
@@ -52,7 +52,7 @@ function displayFFStories() {
 
     deleteBtn.onclick = function() {
       stories.splice(index, 1);
-      localStorage.setItem("ffStories", JSON.stringify(stories));
+      saveUserData("ffStories", stories);
       displayFFStories();
     };
 
