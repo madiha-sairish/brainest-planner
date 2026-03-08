@@ -1,5 +1,5 @@
 function loadProgress() {
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let tasks = loadUserData("tasks");
 
   let total = tasks.length;
   let completed = tasks.filter(task => task.done).length;
