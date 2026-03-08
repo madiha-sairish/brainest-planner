@@ -1,14 +1,14 @@
 function saveExtraNote() {
   let input = document.getElementById("extraInput");
-  let text = input.value;
+  let text = input.value.trim();
 
   if (text === "") return;
 
-  let notes = JSON.parse(localStorage.getItem("extraNotes")) || [];
+  let notes = loadUserData("extraNotes");
 
   notes.unshift(text);
 
-  localStorage.setItem("extraNotes", JSON.stringify(notes));
+  saveUserData("extraNotes", notes);
 
   input.value = "";
   displayExtraNotes();
@@ -18,7 +18,7 @@ function displayExtraNotes() {
   let extraList = document.getElementById("extraList");
   extraList.innerHTML = "";
 
-  let notes = JSON.parse(localStorage.getItem("extraNotes")) || [];
+  let notes = loadUserData("extraNotes");
 
   notes.forEach(function(note, index) {
     let card = document.createElement("div");
@@ -32,7 +32,7 @@ function displayExtraNotes() {
 
     deleteBtn.onclick = function() {
       notes.splice(index, 1);
-      localStorage.setItem("extraNotes", JSON.stringify(notes));
+      saveUserData("extraNotes", notes);
       displayExtraNotes();
     };
 
