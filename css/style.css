@@ -438,3 +438,12 @@ margin-top: 16px;
 color: #6c5ce7;
 font-weight: bold;
 }
+.navbar button{
+padding: 10px 14px;
+border: none;
+border-radius: 8px;
+background: white;
+color: #6c5ce7;
+font-weight: bold;
+cursor: pointer;
+}
