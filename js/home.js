@@ -1,9 +1,9 @@
 function loadHomeDashboard() {
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  let diaryEntries = JSON.parse(localStorage.getItem("diaryEntries")) || [];
-  let moodEntries = JSON.parse(localStorage.getItem("moodEntries")) || [];
-  let customQuotes = JSON.parse(localStorage.getItem("customQuotes")) || [];
-  let extraNotes = JSON.parse(localStorage.getItem("extraNotes")) || [];
+  let tasks = loadUserData("tasks");
+  let diaryEntries = loadUserData("diaryEntries");
+  let moodEntries = loadUserData("moodEntries");
+  let customQuotes = loadUserData("customQuotes");
+  let extraNotes = loadUserData("extraNotes");
 
   let totalTasks = tasks.length;
   let completedTasks = tasks.filter(task => task.done).length;
@@ -14,11 +14,15 @@ function loadHomeDashboard() {
   if (moodEntries.length > 0) {
     document.getElementById("homeLatestMood").textContent =
       moodEntries[0].date + " - " + moodEntries[0].mood;
+  } else {
+    document.getElementById("homeLatestMood").textContent = "No mood saved yet.";
   }
 
   if (diaryEntries.length > 0) {
     document.getElementById("homeLatestDiary").textContent =
       diaryEntries[0].date + " - " + diaryEntries[0].text;
+  } else {
+    document.getElementById("homeLatestDiary").textContent = "No diary entry yet.";
   }
 
   document.getElementById("homeQuotesCount").textContent = customQuotes.length;
