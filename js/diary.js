@@ -1,17 +1,17 @@
 function saveDiary() {
   let date = document.getElementById("diaryDate").value;
-  let text = document.getElementById("diaryInput").value;
+  let text = document.getElementById("diaryInput").value.trim();
 
   if (date === "" || text === "") return;
 
-  let entries = JSON.parse(localStorage.getItem("diaryEntries")) || [];
+  let entries = loadUserData("diaryEntries");
 
   entries.unshift({
     date: date,
     text: text
   });
 
-  localStorage.setItem("diaryEntries", JSON.stringify(entries));
+  saveUserData("diaryEntries", entries);
 
   document.getElementById("diaryInput").value = "";
   document.getElementById("diaryDate").value = "";
@@ -23,7 +23,7 @@ function displayDiary() {
   let diaryList = document.getElementById("diaryList");
   diaryList.innerHTML = "";
 
-  let entries = JSON.parse(localStorage.getItem("diaryEntries")) || [];
+  let entries = loadUserData("diaryEntries");
 
   entries.forEach(function(entry, index) {
     let card = document.createElement("div");
@@ -40,7 +40,7 @@ function displayDiary() {
 
     deleteBtn.onclick = function() {
       entries.splice(index, 1);
-      localStorage.setItem("diaryEntries", JSON.stringify(entries));
+      saveUserData("diaryEntries", entries);
       displayDiary();
     };
 
