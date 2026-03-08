@@ -14,14 +14,15 @@ function showQuote() {
 
 function saveCustomQuote() {
   let input = document.getElementById("customQuoteInput");
-  let quoteText = input.value;
+  let quoteText = input.value.trim();
 
   if (quoteText === "") return;
 
-  let saved = JSON.parse(localStorage.getItem("customQuotes")) || [];
+  let saved = loadUserData("customQuotes");
+
   saved.unshift(quoteText);
 
-  localStorage.setItem("customQuotes", JSON.stringify(saved));
+  saveUserData("customQuotes", saved);
 
   input.value = "";
   displaySavedQuotes();
@@ -31,7 +32,7 @@ function displaySavedQuotes() {
   let savedQuotes = document.getElementById("savedQuotes");
   savedQuotes.innerHTML = "";
 
-  let saved = JSON.parse(localStorage.getItem("customQuotes")) || [];
+  let saved = loadUserData("customQuotes");
 
   saved.forEach(function(quote, index) {
     let card = document.createElement("div");
@@ -45,7 +46,7 @@ function displaySavedQuotes() {
 
     deleteBtn.onclick = function() {
       saved.splice(index, 1);
-      localStorage.setItem("customQuotes", JSON.stringify(saved));
+      saveUserData("customQuotes", saved);
       displaySavedQuotes();
     };
 
