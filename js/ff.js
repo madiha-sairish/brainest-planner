@@ -1,54 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+function saveFFStory() {
+  let title = document.getElementById("ffTitle").value;
+  let character = document.getElementById("ffCharacter").value;
+  let genre = document.getElementById("ffGenre").value;
+  let story = document.getElementById("ffStory").value;
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brainest Planner - Fan Fiction</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+  if (title === "" || character === "" || genre === "" || story === "") return;
 
-<body>
+  let stories = JSON.parse(localStorage.getItem("ffStories")) || [];
 
-  <nav class="navbar">
-    <h1>Brainest Planner</h1>
+  stories.unshift({
+    title: title,
+    character: character,
+    genre: genre,
+    story: story
+  });
 
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="todo.html">ToDo</a></li>
-      <li><a href="diary.html">Diary</a></li>
-      <li><a href="mood.html">Mood</a></li>
-      <li><a href="ff.html">Fan Fiction</a></li>
-      <li><a href="quotes.html">Quotes</a></li>
-      <li><a href="progress.html">Progress</a></li>
-      <li><a href="extra.html">Extra</a></li>
-      <li><a href="archive.html">Archive</a></li>
-    </ul>
-  </nav>
+  localStorage.setItem("ffStories", JSON.stringify(stories));
 
-  <div class="container">
-    <h2>Fan Fiction</h2>
-    <p>Write your delulu, love, hate, or imaginary stories here 🌸</p>
+  document.getElementById("ffTitle").value = "";
+  document.getElementById("ffCharacter").value = "";
+  document.getElementById("ffGenre").value = "";
+  document.getElementById("ffStory").value = "";
 
-    <input type="text" id="ffTitle" placeholder="Enter story title">
-    <br><br>
+  displayFFStories();
+}
 
-    <input type="text" id="ffCharacter" placeholder="Enter character or fandom name">
-    <br><br>
+function displayFFStories() {
+  let ffList = document.getElementById("ffList");
+  ffList.innerHTML = "";
 
-    <input type="text" id="ffGenre" placeholder="Enter genre (love, hate, delulu, drama...)">
-    <br><br>
+  let stories = JSON.parse(localStorage.getItem("ffStories")) || [];
 
-    <textarea id="ffStory" placeholder="Write your story here..."></textarea>
-    <br><br>
+  stories.forEach(function(entry, index) {
+    let card = document.createElement("div");
+    card.className = "ff-card";
 
-    <button onclick="saveFFStory()">Save Story</button>
+    let title = document.createElement("h3");
+    title.textContent = entry.title;
 
-    <div id="ffList"></div>
-  </div>
+    let character = document.createElement("p");
+    character.innerHTML = "<strong>Character:</strong> " + entry.character;
 
-  <script src="js/common.js"></script>
-  <script src="js/ff.js"></script>
+    let genre = document.createElement("p");
+    genre.innerHTML = "<strong>Genre:</strong> " + entry.genre;
 
-</body>
-</html>
+    let story = document.createElement("p");
+    story.textContent = entry.story;
+
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+
+    deleteBtn.onclick = function() {
+      stories.splice(index, 1);
+      localStorage.setItem("ffStories", JSON.stringify(stories));
+      displayFFStories();
+    };
+
+    card.appendChild(title);
+    card.appendChild(character);
+    card.appendChild(genre);
+    card.appendChild(story);
+    card.appendChild(deleteBtn);
+
+    ffList.appendChild(card);
+  });
+}
+
+displayFFStories();
