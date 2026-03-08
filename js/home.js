@@ -4,7 +4,9 @@ function loadHomeDashboard() {
   let moodEntries = loadUserData("moodEntries");
   let customQuotes = loadUserData("customQuotes");
   let extraNotes = loadUserData("extraNotes");
-
+  let currentUser = localStorage.getItem("currentUser");
+document.getElementById("welcomeUser").textContent =
+"Logged in as: " + currentUser;
   let totalTasks = tasks.length;
   let completedTasks = tasks.filter(task => task.done).length;
 
