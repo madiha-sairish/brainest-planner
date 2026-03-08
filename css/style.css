@@ -504,3 +504,13 @@ font-weight: bold;
 cursor: pointer;
 margin-left: 8px;
 }
+.nav-links a:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  opacity: 0.7;
+}
+.nav-links a:hover {
+  opacity: 0.8;
+}
