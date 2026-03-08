@@ -1,14 +1,14 @@
 function saveMood(selectedMood) {
   let today = new Date().toISOString().split("T")[0];
 
-  let moods = JSON.parse(localStorage.getItem("moodEntries")) || [];
+  let moods = loadUserData("moodEntries");
 
   moods.unshift({
     date: today,
     mood: selectedMood
   });
 
-  localStorage.setItem("moodEntries", JSON.stringify(moods));
+  saveUserData("moodEntries", moods);
 
   displayMoods();
 }
@@ -17,7 +17,7 @@ function displayMoods() {
   let moodList = document.getElementById("moodList");
   moodList.innerHTML = "";
 
-  let moods = JSON.parse(localStorage.getItem("moodEntries")) || [];
+  let moods = loadUserData("moodEntries");
 
   moods.forEach(function(entry, index) {
     let card = document.createElement("div");
@@ -34,7 +34,7 @@ function displayMoods() {
 
     deleteBtn.onclick = function() {
       moods.splice(index, 1);
-      localStorage.setItem("moodEntries", JSON.stringify(moods));
+      saveUserData("moodEntries", moods);
       displayMoods();
     };
 
