@@ -4,10 +4,11 @@ function loadArchive() {
   loadMoodArchive();
   loadQuotesArchive();
   loadExtraArchive();
+  loadFFArchive();
 }
 
 function loadTasksArchive() {
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let tasks = loadUserData("tasks");
   let container = document.getElementById("archiveTasks");
   container.innerHTML = "";
 
@@ -29,7 +30,7 @@ function loadTasksArchive() {
 }
 
 function loadDiaryArchive() {
-  let entries = JSON.parse(localStorage.getItem("diaryEntries")) || [];
+  let entries = loadUserData("diaryEntries");
   let container = document.getElementById("archiveDiary");
   container.innerHTML = "";
 
@@ -55,7 +56,7 @@ function loadDiaryArchive() {
 }
 
 function loadMoodArchive() {
-  let moods = JSON.parse(localStorage.getItem("moodEntries")) || [];
+  let moods = loadUserData("moodEntries");
   let container = document.getElementById("archiveMood");
   container.innerHTML = "";
 
@@ -77,7 +78,7 @@ function loadMoodArchive() {
 }
 
 function loadQuotesArchive() {
-  let quotes = JSON.parse(localStorage.getItem("customQuotes")) || [];
+  let quotes = loadUserData("customQuotes");
   let container = document.getElementById("archiveQuotes");
   container.innerHTML = "";
 
@@ -99,7 +100,7 @@ function loadQuotesArchive() {
 }
 
 function loadExtraArchive() {
-  let notes = JSON.parse(localStorage.getItem("extraNotes")) || [];
+  let notes = loadUserData("extraNotes");
   let container = document.getElementById("archiveExtra");
   container.innerHTML = "";
 
@@ -116,6 +117,44 @@ function loadExtraArchive() {
     text.textContent = note;
 
     card.appendChild(text);
+    container.appendChild(card);
+  });
+}
+
+function loadFFArchive() {
+  let stories = loadUserData("ffStories");
+  let container = document.getElementById("archiveFF");
+
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  if (stories.length === 0) {
+    container.innerHTML = "<p>No fan fiction stories yet.</p>";
+    return;
+  }
+
+  stories.forEach(function(entry) {
+    let card = document.createElement("div");
+    card.className = "archive-card";
+
+    let title = document.createElement("h4");
+    title.textContent = entry.title;
+
+    let character = document.createElement("p");
+    character.textContent = "Character: " + entry.character;
+
+    let genre = document.createElement("p");
+    genre.textContent = "Genre: " + entry.genre;
+
+    let story = document.createElement("p");
+    story.textContent = entry.story;
+
+    card.appendChild(title);
+    card.appendChild(character);
+    card.appendChild(genre);
+    card.appendChild(story);
+
     container.appendChild(card);
   });
 }
