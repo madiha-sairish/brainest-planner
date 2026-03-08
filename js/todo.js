@@ -1,75 +1,65 @@
-function addTask(){
+function addTask() {
+  let input = document.getElementById("taskInput");
+  let taskText = input.value.trim();
 
-let input = document.getElementById("taskInput");
-let taskText = input.value;
+  if (taskText === "") return;
 
-if(taskText === "") return;
+  let tasks = loadUserData("tasks");
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.push({
+    text: taskText,
+    done: false
+  });
 
-tasks.push({text:taskText, done:false});
+  saveUserData("tasks", tasks);
 
-localStorage.setItem("tasks", JSON.stringify(tasks));
-
-displayTasks();
-
-input.value = "";
+  input.value = "";
+  displayTasks();
 }
 
-function displayTasks(){
+function displayTasks() {
+  let taskList = document.getElementById("taskList");
+  taskList.innerHTML = "";
 
-let taskList = document.getElementById("taskList");
-taskList.innerHTML = "";
+  let tasks = loadUserData("tasks");
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach(function(task, index) {
+    let li = document.createElement("li");
 
-tasks.forEach(function(task,index){
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.done;
 
-let li = document.createElement("li");
+    checkbox.onchange = function() {
+      tasks[index].done = checkbox.checked;
+      saveUserData("tasks", tasks);
+      displayTasks();
+    };
 
-let checkbox = document.createElement("input");
-checkbox.type = "checkbox";
-checkbox.checked = task.done;
+    let span = document.createElement("span");
+    span.textContent = task.text;
+    span.style.marginRight = "6px";
 
-checkbox.onchange = function(){
+    if (task.done) {
+      span.style.textDecoration = "line-through";
+      span.style.color = "gray";
+    }
 
-tasks[index].done = checkbox.checked;
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
 
-localStorage.setItem("tasks", JSON.stringify(tasks));
+    deleteBtn.onclick = function() {
+      tasks.splice(index, 1);
+      saveUserData("tasks", tasks);
+      displayTasks();
+    };
 
-displayTasks();
+    li.appendChild(checkbox);
+    li.appendChild(span);
+    li.appendChild(deleteBtn);
 
-};
-
-let span = document.createElement("span");
-span.textContent = task.text;
-
-if(task.done){
-span.style.textDecoration = "line-through";
-span.style.color = "gray";
-}
-
-let deleteBtn = document.createElement("button");
-deleteBtn.textContent = "Delete";
-
-deleteBtn.onclick = function(){
-
-tasks.splice(index,1);
-
-localStorage.setItem("tasks", JSON.stringify(tasks));
-
-displayTasks();
-
-};
-
-li.appendChild(checkbox);
-li.appendChild(span);
-li.appendChild(deleteBtn);
-
-taskList.appendChild(li);
-
-});
-
+    taskList.appendChild(li);
+  });
 }
 
 displayTasks();
