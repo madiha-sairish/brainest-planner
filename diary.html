@@ -9,42 +9,35 @@
 </head>
 
 <body>
-<body class="light-theme">
-<div class="navbar">
-  <h1>Brainest Planner</h1>
 
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="todo.html">ToDo</a>
-    <a href="diary.html">Diary</a>
-    <a href="mood.html">Mood</a>
-    <a href="ff.html">Fan Friction</a>
-    <a href="quotes.html">Quotes</a>
-    <a href="progress.html">Progress</a>
-    <a href="extra.html">Extra</a>
-    <a href="archive.html">Archive</a>
+<div class="sidebar">
 
-    <button onclick="toggleTheme()" class="theme-btn">Theme</button>
-    <button onclick="logoutUser()" class="logout-btn">Logout</button>
-  </div>
+<h2>Brainest</h2>
+
+<a href="index.html">🏠 Home</a>
+<a href="todo.html">📋 ToDo</a>
+<a href="diary.html">📖 Diary</a>
+<a href="mood.html">😊 Mood</a>
+<a href="ff.html">⭐ Fan Fiction</a>
+<a href="quotes.html">💬 Quotes</a>
+<a href="progress.html">📊 Progress</a>
+<a href="extra.html">📝 Extra</a>
+<a href="archive.html">📂 Archive</a>
+
+<button onclick="toggleTheme()" class="theme-btn">Theme</button>
+<button onclick="logoutUser()" class="logout-btn">Logout</button>
+
 </div>
-  <div class="container">
-    <h2>My Diary</h2>
-    <p>Write your daily thoughts and memories here 🌸</p>
 
-    <input type="date" id="diaryDate">
-    <br><br>
+<div class="main">
 
-    <textarea id="diaryInput" placeholder="Write your diary entry here..."></textarea>
-    <br><br>
+<div class="navbar">
+<h1>Brainest Planner</h1>
+</div>
 
-    <button onclick="saveDiary()">Save Entry</button>
+<!-- PAGE CONTENT HERE -->
 
-    <div id="diaryList"></div>
-  </div>
-
-  <script src="js/common.js"></script>
-  <script src="js/diary.js"></script>
+</div>
 
 </body>
 </html>
