@@ -9,68 +9,35 @@
 </head>
 
 <body>
-<body class="light-theme">
- <div class="navbar">
-  <h1>Brainest Planner</h1>
 
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="todo.html">ToDo</a>
-    <a href="diary.html">Diary</a>
-    <a href="mood.html">Mood</a>
-    <a href="ff.html">Fan Friction</a>
-    <a href="quotes.html">Quotes</a>
-    <a href="progress.html">Progress</a>
-    <a href="extra.html">Extra</a>
-    <a href="archive.html">Archive</a>
+<div class="sidebar">
 
-    <button onclick="toggleTheme()" class="theme-btn">Theme</button>
-    <button onclick="logoutUser()" class="logout-btn">Logout</button>
-  </div>
+<h2>Brainest</h2>
+
+<a href="index.html">🏠 Home</a>
+<a href="todo.html">📋 ToDo</a>
+<a href="diary.html">📖 Diary</a>
+<a href="mood.html">😊 Mood</a>
+<a href="ff.html">⭐ Fan Fiction</a>
+<a href="quotes.html">💬 Quotes</a>
+<a href="progress.html">📊 Progress</a>
+<a href="extra.html">📝 Extra</a>
+<a href="archive.html">📂 Archive</a>
+
+<button onclick="toggleTheme()" class="theme-btn">Theme</button>
+<button onclick="logoutUser()" class="logout-btn">Logout</button>
+
 </div>
 
-  <div class="container">
-    <h2>Welcome to Brainest Planner</h2>
-    <p id="welcomeUser"></p>
-    <p>Your personal aesthetic productivity planner 🌸</p>
+<div class="main">
 
-    <div class="dashboard-grid">
+<div class="navbar">
+<h1>Brainest Planner</h1>
+</div>
 
-      <div class="dashboard-card">
-        <h3>Total Tasks</h3>
-        <p id="homeTotalTasks">0</p>
-      </div>
+<!-- PAGE CONTENT HERE -->
 
-      <div class="dashboard-card">
-        <h3>Completed Tasks</h3>
-        <p id="homeCompletedTasks">0</p>
-      </div>
-
-      <div class="dashboard-card">
-        <h3>Latest Mood</h3>
-        <p id="homeLatestMood">No mood saved yet.</p>
-      </div>
-
-      <div class="dashboard-card">
-        <h3>Latest Diary Entry</h3>
-        <p id="homeLatestDiary">No diary entry yet.</p>
-      </div>
-
-      <div class="dashboard-card">
-        <h3>Saved Quotes</h3>
-        <p id="homeQuotesCount">0</p>
-      </div>
-
-      <div class="dashboard-card">
-        <h3>Extra Notes</h3>
-        <p id="homeExtraCount">0</p>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="js/common.js"></script>
-  <script src="js/home.js"></script>
+</div>
 
 </body>
 </html>
