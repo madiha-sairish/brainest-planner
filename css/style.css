@@ -4,90 +4,97 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: "Poppins", sans-serif;
+font-family:Segoe UI, sans-serif;
 }
 
 /* BODY */
 
 body{
-background:linear-gradient(135deg,#FDF4FF,#EFF6FF);
-color:#333;
 display:flex;
+background:linear-gradient(135deg,#f3e8ff,#e0f2fe);
+color:#333;
 }
 
 /* SIDEBAR */
 
 .sidebar{
-width:220px;
+width:230px;
 height:100vh;
-background:linear-gradient(180deg,#C4B5FD,#BAE6FD);
-padding:25px 20px;
 position:fixed;
 left:0;
 top:0;
+
+background:linear-gradient(180deg,#c4b5fd,#93c5fd);
+
+padding:25px 20px;
+
 display:flex;
 flex-direction:column;
-gap:18px;
-box-shadow:4px 0 12px rgba(0,0,0,0.08);
+gap:15px;
+
+color:white;
 }
 
 .sidebar h2{
-color:white;
-margin-bottom:15px;
-font-size:20px;
+margin-bottom:20px;
 }
 
 .sidebar a{
+
 text-decoration:none;
 color:white;
-font-weight:500;
+
 padding:8px 10px;
+
 border-radius:8px;
+
 transition:0.2s;
+
 }
 
 .sidebar a:hover{
-background:rgba(255,255,255,0.2);
+
+background:rgba(255,255,255,0.25);
+
 }
 
-/* MAIN AREA */
+/* BUTTONS */
 
-.main{
-margin-left:220px;
-width:100%;
-padding:30px;
-}
+.sidebar button{
 
-/* NAVBAR */
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:25px;
-}
-
-.navbar h1{
-color:#7C3AED;
-}
-
-/* THEME + LOGOUT */
-
-.theme-btn,
-.logout-btn{
-
-background:#A78BFA;
+background:#a78bfa;
 border:none;
 color:white;
-padding:8px 14px;
+padding:8px;
 border-radius:8px;
 cursor:pointer;
-margin-left:8px;
+margin-top:10px;
+
 }
 
-.theme-btn:hover,
-.logout-btn:hover{
-background:#8B5CF6;
+.sidebar button:hover{
+
+background:#8b5cf6;
+
+}
+
+/* MAIN */
+
+.main{
+
+margin-left:230px;
+width:100%;
+padding:30px;
+
+}
+
+/* TITLE */
+
+.main h1{
+
+color:#7c3aed;
+margin-bottom:25px;
+
 }
 
 /* DASHBOARD GRID */
@@ -95,85 +102,125 @@ background:#8B5CF6;
 .dashboard{
 
 display:grid;
+
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
 gap:20px;
-margin-top:20px;
 
 }
 
 /* CARDS */
 
-.dashboard-card,
-.progress-card,
-.quote-card,
-.diary-card,
-.mood-card,
-.extra-card,
-.archive-card,
-.ff-card{
+.card{
 
 background:white;
-border-radius:14px;
+
 padding:18px;
-box-shadow:0 6px 14px rgba(0,0,0,0.05);
-transition:0.25s;
+
+border-radius:14px;
+
+box-shadow:0 5px 12px rgba(0,0,0,0.08);
+
 }
 
-.dashboard-card:hover,
-.progress-card:hover,
-.quote-card:hover,
-.diary-card:hover,
-.mood-card:hover,
-.extra-card:hover,
-.archive-card:hover,
-.ff-card:hover{
+/* TODO */
 
-transform:translateY(-3px);
+.todo-container{
+
+max-width:400px;
+
 }
 
-/* INPUTS */
-
-input,textarea{
+.todo-container input{
 
 width:100%;
+
 padding:10px;
-border-radius:10px;
-border:1px solid #E5E7EB;
-margin-bottom:10px;
-}
 
-textarea{
-resize:none;
-}
-
-/* BUTTON */
-
-button{
-
-background:#A78BFA;
-border:none;
-color:white;
-padding:8px 14px;
 border-radius:8px;
+
+border:1px solid #ddd;
+
+margin-bottom:10px;
+
+}
+
+.todo-container button{
+
+padding:8px 14px;
+
+border:none;
+
+border-radius:8px;
+
+background:#a78bfa;
+
+color:white;
+
 cursor:pointer;
+
 }
 
-button:hover{
-background:#8B5CF6;
-}
+.todo-container button:hover{
 
-/* TASK LIST */
+background:#8b5cf6;
+
+}
 
 #taskList li{
 
 list-style:none;
+
 background:white;
+
 padding:10px;
-border-radius:10px;
-margin-bottom:8px;
+
+border-radius:8px;
+
+margin-top:8px;
+
 display:flex;
+
+justify-content:space-between;
+
 align-items:center;
+
+}
+
+/* MOOD BUTTONS */
+
+.mood-buttons{
+
+display:flex;
+
 gap:10px;
+
+flex-wrap:wrap;
+
+margin-bottom:15px;
+
+}
+
+.mood-buttons button{
+
+background:#93c5fd;
+
+color:#1e3a8a;
+
+border:none;
+
+padding:8px 10px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+.mood-buttons button:hover{
+
+background:#60a5fa;
+
 }
 
 /* PROGRESS BAR */
@@ -181,10 +228,15 @@ gap:10px;
 .progress-bar{
 
 width:100%;
+
 height:12px;
-background:#E5E7EB;
+
+background:#e5e7eb;
+
 border-radius:10px;
+
 overflow:hidden;
+
 margin-top:8px;
 
 }
@@ -192,45 +244,9 @@ margin-top:8px;
 .progress-fill{
 
 height:100%;
-background:linear-gradient(90deg,#C4B5FD,#93C5FD);
+
+background:linear-gradient(90deg,#c4b5fd,#93c5fd);
+
 width:0%;
-}
 
-/* MOOD BUTTONS */
-
-.mood-buttons{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:15px;
-}
-
-.mood-buttons button{
-background:#BAE6FD;
-color:#1E3A8A;
-}
-
-/* DARK MODE */
-
-.dark-theme{
-background:#1F2937;
-color:white;
-}
-
-.dark-theme .sidebar{
-background:#4F46E5;
-}
-
-.dark-theme .dashboard-card,
-.dark-theme .progress-card,
-.dark-theme .quote-card,
-.dark-theme .diary-card,
-.dark-theme .mood-card,
-.dark-theme .extra-card,
-.dark-theme .archive-card,
-.dark-theme .ff-card,
-.dark-theme #taskList li{
-
-background:#374151;
-color:white;
 }
