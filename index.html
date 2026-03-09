@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brainest Planner - Home</title>
-  <link rel="stylesheet" href="css/style.css">
+
+<title>Brainest Planner</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -24,52 +24,55 @@
 <a href="extra.html">📝 Extra</a>
 <a href="archive.html">📂 Archive</a>
 
-<button onclick="toggleTheme()" class="theme-btn">Theme</button>
-<button onclick="logoutUser()" class="logout-btn">Logout</button>
+<button onclick="toggleTheme()">Theme</button>
+
+<button onclick="logoutUser()">Logout</button>
 
 </div>
 
 <div class="main">
 
-<div class="navbar">
 <h1>Brainest Planner</h1>
-</div>
 
-<!-- PAGE CONTENT HERE -->
-
-</div>
 <div class="dashboard">
 
-<div class="dashboard-card">
-<h2>📋 Total Tasks</h2>
+<div class="card">
+<h3>Total Tasks</h3>
 <p id="homeTotalTasks"></p>
 </div>
 
-<div class="dashboard-card">
-<h2>✅ Completed Tasks</h2>
+<div class="card">
+<h3>Completed Tasks</h3>
 <p id="homeCompletedTasks"></p>
 </div>
 
-<div class="dashboard-card">
-<h2>😊 Latest Mood</h2>
+<div class="card">
+<h3>Latest Mood</h3>
 <p id="homeLatestMood"></p>
 </div>
 
-<div class="dashboard-card">
-<h2>📖 Latest Diary</h2>
+<div class="card">
+<h3>Latest Diary</h3>
 <p id="homeLatestDiary"></p>
 </div>
 
-<div class="dashboard-card">
-<h2>💬 Saved Quotes</h2>
+<div class="card">
+<h3>Saved Quotes</h3>
 <p id="homeQuotesCount"></p>
 </div>
 
-<div class="dashboard-card">
-<h2>📝 Extra Notes</h2>
+<div class="card">
+<h3>Extra Notes</h3>
 <p id="homeExtraCount"></p>
 </div>
 
 </div>
+
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/dashboard.js"></script>
+
 </body>
 </html>
