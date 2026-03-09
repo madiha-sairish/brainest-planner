@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-
 <title>ToDo</title>
-
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -26,10 +22,6 @@
 <a href="extra.html">📝 Extra</a>
 <a href="archive.html">📂 Archive</a>
 
-<button>Theme</button>
-
-<button>Logout</button>
-
 </div>
 
 <div class="main">
@@ -40,9 +32,9 @@
 
 <h2>To-Do List</h2>
 
-<input id="taskInput" placeholder="Enter a new task">
+<input id="taskInput" placeholder="Enter task">
 
-<button>Add Task</button>
+<button onclick="addTask()">Add Task</button>
 
 <ul id="taskList"></ul>
 
@@ -50,6 +42,7 @@
 
 </div>
 
-</body>
+<script src="js/todo.js"></script>
 
+</body>
 </html>
