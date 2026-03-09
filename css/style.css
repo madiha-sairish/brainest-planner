@@ -18,8 +18,10 @@ color:#333;
 /* SIDEBAR */
 
 .sidebar{
+
 width:230px;
 height:100vh;
+
 position:fixed;
 left:0;
 top:0;
@@ -33,6 +35,7 @@ flex-direction:column;
 gap:15px;
 
 color:white;
+
 }
 
 .sidebar h2{
@@ -58,8 +61,6 @@ background:rgba(255,255,255,0.25);
 
 }
 
-/* BUTTONS */
-
 .sidebar button{
 
 background:#a78bfa;
@@ -69,12 +70,6 @@ padding:8px;
 border-radius:8px;
 cursor:pointer;
 margin-top:10px;
-
-}
-
-.sidebar button:hover{
-
-background:#8b5cf6;
 
 }
 
@@ -88,8 +83,6 @@ padding:30px;
 
 }
 
-/* TITLE */
-
 .main h1{
 
 color:#7c3aed;
@@ -97,19 +90,15 @@ margin-bottom:25px;
 
 }
 
-/* DASHBOARD GRID */
+/* DASHBOARD */
 
 .dashboard{
 
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
 gap:20px;
 
 }
-
-/* CARDS */
 
 .card{
 
@@ -127,7 +116,7 @@ box-shadow:0 5px 12px rgba(0,0,0,0.08);
 
 .todo-container{
 
-max-width:400px;
+max-width:450px;
 
 }
 
@@ -161,12 +150,6 @@ cursor:pointer;
 
 }
 
-.todo-container button:hover{
-
-background:#8b5cf6;
-
-}
-
 #taskList li{
 
 list-style:none;
@@ -192,61 +175,17 @@ align-items:center;
 .mood-buttons{
 
 display:flex;
-
 gap:10px;
-
 flex-wrap:wrap;
-
-margin-bottom:15px;
 
 }
 
 .mood-buttons button{
 
 background:#93c5fd;
-
-color:#1e3a8a;
-
 border:none;
-
 padding:8px 10px;
-
 border-radius:8px;
-
 cursor:pointer;
-
-}
-
-.mood-buttons button:hover{
-
-background:#60a5fa;
-
-}
-
-/* PROGRESS BAR */
-
-.progress-bar{
-
-width:100%;
-
-height:12px;
-
-background:#e5e7eb;
-
-border-radius:10px;
-
-overflow:hidden;
-
-margin-top:8px;
-
-}
-
-.progress-fill{
-
-height:100%;
-
-background:linear-gradient(90deg,#c4b5fd,#93c5fd);
-
-width:0%;
 
 }
