@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brainest Planner - Mood Tracker</title>
-  <link rel="stylesheet" href="css/style.css">
+<title>Mood</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <div class="sidebar">
-
 <h2>Brainest</h2>
 
 <a href="index.html">🏠 Home</a>
@@ -23,40 +20,27 @@
 <a href="progress.html">📊 Progress</a>
 <a href="extra.html">📝 Extra</a>
 <a href="archive.html">📂 Archive</a>
-
-<button onclick="toggleTheme()" class="theme-btn">Theme</button>
-<button onclick="logoutUser()" class="logout-btn">Logout</button>
-
 </div>
 
 <div class="main">
 
-<div class="navbar">
-<h1>Brainest Planner</h1>
+<h1>Mood Tracker</h1>
+
+<div class="card">
+
+<div class="mood-buttons">
+
+<button>😊 Happy</button>
+<button>😌 Calm</button>
+<button>😴 Tired</button>
+<button>😢 Sad</button>
+<button>😡 Angry</button>
+
 </div>
 
-<!-- PAGE CONTENT HERE -->
-
 </div>
 
-</body>
-  <div class="container">
-    <h2>Mood Tracker</h2>
-    <p>Track how you feel each day 🌸</p>
-
-    <div class="mood-buttons">
-      <button onclick="saveMood('😊 Happy')">😊 Happy</button>
-      <button onclick="saveMood('😌 Calm')">😌 Calm</button>
-      <button onclick="saveMood('😴 Tired')">😴 Tired</button>
-      <button onclick="saveMood('😔 Sad')">😔 Sad</button>
-      <button onclick="saveMood('😡 Angry')">😡 Angry</button>
-    </div>
-
-    <div id="moodList"></div>
-  </div>
-
-  <script src="js/common.js"></script>
-  <script src="js/mood.js"></script>
+</div>
 
 </body>
 </html>
