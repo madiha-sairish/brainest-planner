@@ -10,53 +10,35 @@
 </head>
 
 <body>
-<body class="light-theme">
+
+<div class="sidebar">
+
+<h2>Brainest</h2>
+
+<a href="index.html">🏠 Home</a>
+<a href="todo.html">📋 ToDo</a>
+<a href="diary.html">📖 Diary</a>
+<a href="mood.html">😊 Mood</a>
+<a href="ff.html">⭐ Fan Fiction</a>
+<a href="quotes.html">💬 Quotes</a>
+<a href="progress.html">📊 Progress</a>
+<a href="extra.html">📝 Extra</a>
+<a href="archive.html">📂 Archive</a>
+
+<button onclick="toggleTheme()" class="theme-btn">Theme</button>
+<button onclick="logoutUser()" class="logout-btn">Logout</button>
+
+</div>
+
+<div class="main">
+
 <div class="navbar">
-  <h1>Brainest Planner</h1>
-
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="todo.html">ToDo</a>
-    <a href="diary.html">Diary</a>
-    <a href="mood.html">Mood</a>
-    <a href="ff.html">Fan Friction</a>
-    <a href="quotes.html">Quotes</a>
-    <a href="progress.html">Progress</a>
-    <a href="extra.html">Extra</a>
-    <a href="archive.html">Archive</a>
-
-    <button onclick="toggleTheme()" class="theme-btn">Theme</button>
-    <button onclick="logoutUser()" class="logout-btn">Logout</button>
-  </div>
+<h1>Brainest Planner</h1>
 </div>
 
-<div class="container">
-
-<h2>Archive</h2>
-<p>View your saved and past records 🌸</p>
-
-<h3>Saved Tasks</h3>
-<div id="archiveTasks"></div>
-
-<h3>Diary Entries</h3>
-<div id="archiveDiary"></div>
-
-<h3>Mood History</h3>
-<div id="archiveMood"></div>
-
-<h3>Saved Quotes</h3>
-<div id="archiveQuotes"></div>
-  
-<h2>Fan Fiction</h2>
-<div id="archiveFF"></div>
-  
-<h3>Extra Notes</h3>
-<div id="archiveExtra"></div>
+<!-- PAGE CONTENT HERE -->
 
 </div>
-
-<script src="js/common.js"></script>
-<script src="js/archive.js"></script>
 
 </body>
 
